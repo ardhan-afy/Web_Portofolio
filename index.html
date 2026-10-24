@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ardhan — Rekayasa Perangkat Lunak</title>
+<meta name="description" content="Portfolio siswa Rekayasa Perangkat Lunak SMK Krian 1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="3d.css">
+<link rel="stylesheet" href="landscape.css">
+<link rel="stylesheet" href="health.css">
+<link rel="stylesheet" href="docs.css">
+<link rel="stylesheet" href="musik.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+</head>
+<body>
+<canvas id="bg3d" aria-hidden="true"></canvas>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">PORTOFOLIO<span class="dot"></span></a>
+
+    <nav class="nav-tabs" id="navTabs">
+      <a href="#tentang" class="tab" data-tab="tentang"><span class="tab-name">TENTANG SAYA</span></a>
+      <a href="#pendidikan" class="tab" data-tab="pendidikan"><span class="tab-name">PENDIDIKAN</span></a>
+      <a href="#skill" class="tab" data-tab="skill"><span class="tab-name">SKILL</span></a>
+      <a href="#project" class="tab" data-tab="project"><span class="tab-name">PROJECT</span></a>
+      <a href="#pengalaman" class="tab" data-tab="pengalaman"><span class="tab-name">PENGALAMAN</span></a>
+      <a href="#sertifikat" class="tab" data-tab="sertifikat"><span class="tab-name">SERTIFIKAT</span></a>
+      <a href="#cv" class="tab" data-tab="cv"><span class="tab-name">CV</span></a>
+      <a href="#kontak" class="tab" data-tab="kontak"><span class="tab-name">KONTAK</span></a>
+    </nav>
+
+    <button class="burger" id="burgerBtn" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="avatar3d" id="avatar3d"><div class="av-card"><span class="av-l l1"></span><span class="av-l l2"></span><img src="foto.jpeg" alt="Foto Ardhan"><span class="av-badge">RPL</span></div></div>
+      <p class="eyebrow">Rekayasa Perangkat Lunak - SMK Krian 1</p>
+      <h1>Halo, saya <span class="accent">Ardhan</span><br>Saya membangun aplikasi web dari dasar</h1>
+      <p class="hero-desc">Siswa XII RPL 5 yang lagi fokus mendalami dunia web development. Bisa bantu buat tampilan front-end sekaligus ngolah logika back-end sederhana. Masih dalam tahap banyak belajar, tapi selalu seru tiap nyoba nge-build website baru.</p>
+      <div class="hero-actions">
+        <a href="#project" class="btn btn-primary">Lihat Project</a>
+        <a href="#kontak" class="btn btn-ghost">Hubungi Saya</a>
+        <a href="cv/CV-Muhammad-Rasyid-Anfyardhana.pdf" class="btn btn-ghost" download>Unduh CV</a>
+      </div>
+    </div>
+
+    <div class="terminal" role="img" aria-label="Jendela kode berisi profil singkat">
+      <div class="terminal-bar">
+        <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+        <span class="terminal-title">Profil</span>
+      </div>
+      <pre class="terminal-body"><code><span class="c-key">const</span> <span class="c-var">siswa</span> = {
+  <span class="c-prop">Nama</span>: <span class="c-str">"Ardhan"</span>,
+  <span class="c-prop">Sekolah</span>: <span class="c-str">"SMK Krian 1"</span>,
+  <span class="c-prop">Jurusan</span>: <span class="c-str">"Rekayasa Perangkat Lunak"</span>,
+  <span class="c-prop">Status</span>: <span class="c-str">"Pelajar"</span>,
+  <span class="c-prop">Skill</span>: [<span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>, <span class="c-str">"JavaScript"</span>],
+  <span class="c-prop">Gokil</span>: <span class="c-bool">True</span>
+};<span class="cursor">&nbsp;</span></code></pre>
+    </div>
+  </div>
+  <a href="#tentang" class="scroll-hint" aria-label="Gulir ke bawah"><span></span></a>
+</section>
+
+<main>
+
+  <!-- ================= TENTANG SAYA ================= -->
+  <section class="section" id="tentang">
+    <div class="section-inner">
+      <p class="section-label">01.Tentang Saya</p>
+      <h2 class="section-title">Tentang Saya</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <div class="photo-frame">
+            <span class="frame-corner corner-tl"></span>
+            <span class="frame-corner corner-tr"></span>
+            <span class="frame-corner corner-bl"></span>
+            <span class="frame-corner corner-br"></span>
+            <div class="photo-frame-inner">
+              <img src="foto.jpeg" alt="Foto Ardhan">
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>Saya adalah siswa Rekayasa Perangkat Lunak di <strong>SMK Krian 1</strong> yang tertarik pada dunia pengembangan perangkat lunak, khususnya pembuatan aplikasi web. Saya suka belajar hal baru dengan cara langsung praktik membuat project kecil-kecilan.</p>
+          <p>Selama masa sekolah,saya terbiasa bekerja dengan alur <em>design → coding → testing</em> dalam mengerjakan tugas maupun project kelompok, dan senang berkolaborasi menggunakan GitHub untuk pengerjaan tim.</p>
+
+          <div class="about-facts">
+            <div class="fact">
+              <span class="fact-num">4</span>
+              <span class="fact-label">Project dibuat</span>
+            </div>
+            <div class="fact">
+              <span class="fact-num">1</span>
+              <span class="fact-label">Kali magang industri</span>
+            </div>
+            <div class="fact">
+              <span class="fact-num">XII</span>
+              <span class="fact-label">RPL — SMK Krian 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PENDIDIKAN ================= -->
+  <section class="section section-alt" id="pendidikan">
+    <div class="section-inner">
+      <p class="section-label">02.Pendidikan</p>
+      <h2 class="section-title">Pendidikan</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item place-link" data-place="sekolah" tabindex="0" role="button">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 — Sekarang</span>
+            <h3>SMK Krian 1 — Rekayasa Perangkat Lunak</h3>
+            <p>Menempuh pendidikan kejuruan dengan fokus pada pengembangan perangkat lunak, meliputi pemrograman web, basis data, dan rekayasa perangkat lunak berbasis proyek.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item place-link" data-place="smp" tabindex="0" role="button">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2020 — 2023</span>
+            <h3>SMPN 1 Balongbendo</h3>
+            <p>Lulus dengan nilai yang baik serta aktif mengembangkan minat pribadi di bidang komputer dan teknologi informasi secara mandiri.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item place-link" data-place="mi" tabindex="0" role="button">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2014 — 2020</span>
+            <h3>MI Miftahul Ulum Kraton</h3>
+            <p>Menyelesaikan pendidikan dasar dengan baik sekaligus menjadi masa awal mulai tertarik dan mengenal dunia komputer secara mendasar.</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="section-sub map-sub">Ketuk salah satu sekolah di atas untuk terbang ke lokasinya di peta 3D. Peta bisa diputar dan di-zoom.</p>
+      <div class="map-wrap">
+        <div class="map-panel" id="mapPlaces"></div>
+        <div id="map" role="application" aria-label="Peta 3D lokasi sekolah"></div>
+        <div class="map-fallback" id="mapFallback">
+          <p>Peta 3D belum bisa dimuat. Cek koneksi internet, lalu muat ulang halaman.</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/SMK+Krian+1+Sidoarjo" target="_blank" rel="noopener">Buka di Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILL ================= -->
+  <section class="section" id="skill">
+    <div class="section-inner">
+      <p class="section-label">03.Skill</p>
+      <h2 class="section-title">Skill</h2>
+      <p class="section-sub">Kemampuan teknis yang sudah saya pelajari dan terapkan di sekolah maupun project pribadi.</p>
+
+      <div class="skill-grid">
+
+        <div class="skill-card">
+          <h3 class="skill-cat">Front-End</h3>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-row"><span>HTML</span><span>75%</span></div>
+              <div class="bar"><span style="width:90%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>CSS</span><span>75%</span></div>
+              <div class="bar"><span style="width:85%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>JavaScript</span><span>75%</span></div>
+              <div class="bar"><span style="width:75%"></span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3 class="skill-cat">Back-End &amp; Basis Data</h3>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-row"><span>PHP</span><span>65%</span></div>
+              <div class="bar"><span style="width:70%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>MySQL</span><span>70%</span></div>
+              <div class="bar"><span style="width:75%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>ERD (Entity Relationship Diagram)</span><span>70%</span></div>
+              <div class="bar"><span style="width:55%"></span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3 class="skill-cat">Tools &amp; Lainnya</h3>
+          <div class="tag-list">
+            <span class="tag">GitLab &amp; GitHub</span>
+            <span class="tag">Figma</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">XAMPP</span>
+            <span class="tag">React Native</span>
+            <span class="tag">Expo</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECT ================= -->
+  <section class="section section-alt" id="project">
+    <div class="section-inner">
+      <p class="section-label">04.Project</p>
+      <h2 class="section-title">Project</h2>
+      <p class="section-sub">Beberapa project yang sudah saya kerjakan selama sekolah dan belajar mandiri, dari aplikasi web (PWA) sampai aplikasi Android. Geser atau klik pratinjau untuk melihat layar lainnya.</p>
+
+      <!-- ===== PROJECT UNGGULAN: HEALTH PLUS ===== -->
+      <article class="hp-feature" id="health-plus">
+        <div class="hp-info">
+          <span class="hp-badge">Aplikasi Android · Terbaru</span>
+          <h3>Health Plus</h3>
+          <p>Aplikasi kesehatan harian untuk memantau langkah, merekam rute olahraga, menghitung BMI, serta mencatat air minum dan kalori makanan. Dikembangkan dengan React Native (Expo).</p>
+          <ul class="hp-points">
+            <li>Rekam rute lari, jalan, atau sepeda dengan GPS dan peta satelit</li>
+            <li>Kalkulator BMI, berat badan ideal, dan kebutuhan kalori (BMR/TDEE)</li>
+            <li>Catat asupan air &amp; makanan, lengkap dengan target harian</li>
+            <li>Data tersimpan otomatis di perangkat</li>
+          </ul>
+          <div class="tag-list small"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">JavaScript</span><span class="tag">GPS</span></div>
+          <div class="hp-actions">
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1f1vXx5tdvfQVrUWSzXlzJQNWYF3Pv4AC/view?usp=drive_link" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 19h16"/></svg>Unduh APK</a>
+            <a class="btn btn-ghost" href="https://gitlab.com/anfyardhana2008/healthy_plus" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Kode di GitLab</a>
+          </div>
+        </div>
+
+        <div class="hp-stage">
+          <div class="hp-viewport"  role="group" aria-label="Pratinjau layar aplikasi Health Plus">
+            <div class="hp-track">
+            <button type="button" class="hp-phone" data-title="Beranda — ringkasan harian" aria-label="Beranda — ringkasan harian"><span class="hp-body"><img src="projects/health-plus/beranda.jpg" alt="Layar Beranda Health Plus" loading="lazy" draggable="false"></span></button>
+            <button type="button" class="hp-phone" data-title="Aktivitas — kalkulator BMI" aria-label="Aktivitas — kalkulator BMI"><span class="hp-body"><img src="projects/health-plus/bmi.jpg" alt="Layar kalkulator BMI Health Plus" loading="lazy" draggable="false"></span></button>
+            <button type="button" class="hp-phone" data-title="Rekam — rute lari dengan GPS" aria-label="Rekam — rute lari dengan GPS"><span class="hp-body"><img src="projects/health-plus/rekam.jpg" alt="Layar rekam rute GPS Health Plus" loading="lazy" draggable="false"></span></button>
+            <button type="button" class="hp-phone" data-title="Nutrisi — air minum &amp; kalori" aria-label="Nutrisi — air minum &amp; kalori"><span class="hp-body"><img src="projects/health-plus/nutrisi.jpg" alt="Layar nutrisi Health Plus" loading="lazy" draggable="false"></span></button>
+            <button type="button" class="hp-phone" data-title="Profil — target harian" aria-label="Profil — target harian"><span class="hp-body"><img src="projects/health-plus/profil.jpg" alt="Layar profil Health Plus" loading="lazy" draggable="false"></span></button>
+            </div>
+          </div>
+          <div class="hp-caption" aria-live="polite"></div>
+          <div class="hp-nav">
+            <button type="button" class="hp-arrow hp-prev" aria-label="Layar sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <div class="hp-dots"></div>
+            <button type="button" class="hp-arrow hp-next" aria-label="Layar berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+            <article class="hp-feature rev">
+        <div class="hp-info">
+          <span class="hp-badge">Aplikasi Web · PWA</span>
+          <h3>LibTrack</h3>
+          <p>Sistem inventaris perpustakaan untuk mencatat barang, kondisi, dan peminjaman, lengkap dengan cetak laporan dan QR code. Bisa dipasang sebagai aplikasi (PWA).</p>
+          <ul class="hp-points">
+            <li>Catat barang beserta kondisi, kategori, dan lokasi ruangan</li>
+            <li>Pencatatan peminjaman dan pengembalian barang</li>
+            <li>Cetak laporan PDF dan label QR code</li>
+            <li>Kunci PIN, mode gelap, dan bisa dipasang di HP</li>
+          </ul>
+          <div class="tag-list small"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">PWA</span></div>
+          <div class="hp-actions">
+            <a class="btn btn-primary" href="projects/libtrack/index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l14 8-14 8z"/></svg>Coba Demo</a>
+            <a class="btn btn-ghost" href="https://github.com/ardhan-afy/LibTrack" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>GitHub</a>
+          </div>
+        </div>
+
+        <div class="hp-stage">
+          <div class="hp-viewport" role="group" aria-label="Pratinjau layar aplikasi LibTrack">
+            <div class="hp-track">
+              <button type="button" class="hp-phone" data-title="Beranda — ringkasan aset" aria-label="Beranda — ringkasan aset"><span class="hp-body"><img src="projects/libtrack/s1.jpg" alt="Beranda LibTrack" loading="lazy" draggable="false"></span></button>
+              <button type="button" class="hp-phone" data-title="Inventaris — daftar barang" aria-label="Inventaris — daftar barang"><span class="hp-body"><img src="projects/libtrack/s2.jpg" alt="Daftar inventaris LibTrack" loading="lazy" draggable="false"></span></button>
+              <button type="button" class="hp-phone" data-title="Peminjaman barang" aria-label="Peminjaman barang"><span class="hp-body"><img src="projects/libtrack/s3.jpg" alt="Layar peminjaman LibTrack" loading="lazy" draggable="false"></span></button>
+              <button type="button" class="hp-phone" data-title="Mode gelap" aria-label="Mode gelap"><span class="hp-body"><img src="projects/libtrack/s4.jpg" alt="LibTrack mode gelap" loading="lazy" draggable="false"></span></button>
+            </div>
+          </div>
+          <div class="hp-caption" aria-live="polite"></div>
+          <div class="hp-nav">
+            <button type="button" class="hp-arrow hp-prev" aria-label="Layar sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <div class="hp-dots"></div>
+            <button type="button" class="hp-arrow hp-next" aria-label="Layar berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="hp-feature ">
+        <div class="hp-info">
+          <span class="hp-badge">Aplikasi Web · PWA</span>
+          <h3>Notes App</h3>
+          <p>Aplikasi catatan bergaya iOS dengan pencarian, mode gelap, dan penyimpanan otomatis di perangkat. Bisa dipasang sebagai aplikasi (PWA).</p>
+          <ul class="hp-points">
+            <li>Catatan dengan kategori berwarna: Pribadi, Penting, Resep/Tugas</li>
+            <li>Pencarian cepat berdasarkan judul, isi, atau kategori</li>
+            <li>Sematkan catatan penting dan mode gelap</li>
+            <li>Tersimpan otomatis di perangkat</li>
+          </ul>
+          <div class="tag-list small"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">LocalStorage</span><span class="tag">PWA</span></div>
+          <div class="hp-actions">
+            <a class="btn btn-primary" href="projects/notes/index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l14 8-14 8z"/></svg>Coba Demo</a>
+            <a class="btn btn-ghost" href="https://github.com/ardhan-afy/note-apps" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>GitHub</a>
+          </div>
+        </div>
+
+        <div class="hp-stage">
+          <div class="hp-viewport" role="group" aria-label="Pratinjau layar Notes App">
+            <div class="hp-track">
+              <button type="button" class="hp-phone" data-title="Daftar catatan" aria-label="Daftar catatan"><span class="hp-body"><img src="projects/notes/s1.jpg" alt="Daftar catatan Notes App" loading="lazy" draggable="false"></span></button>
+              <button type="button" class="hp-phone" data-title="Pencarian catatan" aria-label="Pencarian catatan"><span class="hp-body"><img src="projects/notes/s2.jpg" alt="Pencarian di Notes App" loading="lazy" draggable="false"></span></button>
+              <button type="button" class="hp-phone" data-title="Mode gelap" aria-label="Mode gelap"><span class="hp-body"><img src="projects/notes/s3.jpg" alt="Notes App mode gelap" loading="lazy" draggable="false"></span></button>
+            </div>
+          </div>
+          <div class="hp-caption" aria-live="polite"></div>
+          <div class="hp-nav">
+            <button type="button" class="hp-arrow hp-prev" aria-label="Layar sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <div class="hp-dots"></div>
+            <button type="button" class="hp-arrow hp-next" aria-label="Layar berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="hp-feature rev is-wide">
+        <div class="hp-info">
+          <span class="hp-badge">Computer Vision · Web</span>
+          <h3>Puzzle Cam — Hand Gesture</h3>
+          <p>Kamera mendeteksi dua tangan. Cubit untuk mengambil foto, lalu foto dipecah jadi puzzle yang bisa ditukar dengan gerakan tangan.</p>
+          <ul class="hp-points">
+            <li>Deteksi dua tangan secara langsung lewat webcam (MediaPipe)</li>
+            <li>Bingkai foto dibentuk dari jempol dan telunjuk kedua tangan</li>
+            <li>Foto dipecah jadi puzzle 2×2 sampai 5×5</li>
+            <li>Galeri hasil foto yang bisa diunduh</li>
+          </ul>
+          <div class="tag-list small"><span class="tag">JavaScript</span><span class="tag">MediaPipe</span><span class="tag">Webcam</span></div>
+          <div class="hp-actions">
+            <a class="btn btn-primary" href="projects/hand-gesture/index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l14 8-14 8z"/></svg>Coba Demo</a>
+            <a class="btn btn-ghost" href="https://github.com/ardhan-afy/project-hand-gesture" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>GitHub</a>
+          </div>
+        </div>
+
+        <div class="hp-stage">
+          <div class="hp-viewport" role="group" aria-label="Ilustrasi cara kerja Puzzle Cam">
+            <div class="hp-track">
+              <button type="button" class="hp-phone" data-title="Bingkai dari dua tangan (ilustrasi)" aria-label="Bingkai dari dua tangan (ilustrasi)"><span class="hp-body"><img src="projects/hand-gesture/ilustrasi-1.svg" alt="Ilustrasi pengambilan foto dengan dua tangan" loading="lazy" draggable="false"></span></button>
+              <button type="button" class="hp-phone" data-title="Puzzle digeser dengan cubitan (ilustrasi)" aria-label="Puzzle digeser dengan cubitan (ilustrasi)"><span class="hp-body"><img src="projects/hand-gesture/ilustrasi-2.svg" alt="Ilustrasi puzzle yang ditukar dengan gerakan tangan" loading="lazy" draggable="false"></span></button>
+            </div>
+          </div>
+          <div class="hp-caption" aria-live="polite"></div>
+          <div class="hp-nav">
+            <button type="button" class="hp-arrow hp-prev" aria-label="Layar sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <div class="hp-dots"></div>
+            <button type="button" class="hp-arrow hp-next" aria-label="Layar berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= PENGALAMAN ================= -->
+  <section class="section" id="pengalaman">
+    <div class="section-inner">
+      <p class="section-label">05.Pengalaman</p>
+      <h2 class="section-title">Pengalaman Magang &amp; Organisasi</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Januari 2026 — Mei 2026</span>
+            <h3>Praktik Kerja Lapangan (PKL) — PT KARYA USAHA BARU</h3>
+            <p>Bertanggung jawab dalam digitalisasi berkas dan pengelolaan database karyawan,</p>
+              <p>memastikan akurasi data serta kerapian pengarsipan dokumen administrasi perusahaan.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 — 2024</span>
+            <h3>Anggota Ekstrakurikuler Akustik</h3>
+            <p>Aktif berpartisipasi dalam latihan rutin dan penampilan sekolah, mengasah kemampuan kerja sama tim, komunikasi, serta kreativitas di luar bidang akademik.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERTIFIKAT ================= -->
+  <section class="section section-alt" id="sertifikat">
+    <div class="section-inner">
+      <p class="section-label">06.Sertifikat</p>
+      <h2 class="section-title">Sertifikat &amp; Prestasi</h2>
+      <p class="section-sub">Klik sertifikat untuk memperbesar.</p>
+
+      <div class="cert-grid">
+        <article class="cert-card" data-zoom="sertifikat/dicoding.jpg" data-caption="Belajar Dasar Manajemen Proyek" tabindex="0" role="button" aria-label="Perbesar sertifikat Belajar Dasar Manajemen Proyek">
+          <div class="cert-thumb"><img src="sertifikat/dicoding.jpg" alt="Sertifikat Belajar Dasar Manajemen Proyek" loading="lazy"></div>
+          <h3>Belajar Dasar Manajemen Proyek</h3>
+          <p>Dicoding Indonesia · ID MRZMVLJ23ZYQ</p>
+          <span class="cert-date">22 September 2026</span>
+          <div class="cert-links"><a href="sertifikat/dicoding-manajemen-proyek.pdf" target="_blank" rel="noopener">Buka PDF</a><a href="https://www.dicoding.com/certificates/MRZMVLJ23ZYQ" target="_blank" rel="noopener">Verifikasi</a></div>
+        </article>
+        <article class="cert-card" data-zoom="sertifikat/pkl.jpg" data-caption="Praktik Kerja Lapangan (PKL)" tabindex="0" role="button" aria-label="Perbesar sertifikat Praktik Kerja Lapangan (PKL)">
+          <div class="cert-thumb"><img src="sertifikat/pkl.jpg" alt="Sertifikat Praktik Kerja Lapangan (PKL)" loading="lazy"></div>
+          <h3>Praktik Kerja Lapangan (PKL)</h3>
+          <p>PT Karya Usaha Baru · Nilai 89, predikat Sangat Baik</p>
+          <span class="cert-date">2 Juni 2026</span>
+          <div class="cert-links"><a href="sertifikat/sertifikat-smk-krian-1.pdf" target="_blank" rel="noopener">Buka PDF</a></div>
+        </article>
+        <article class="cert-card" data-zoom="sertifikat/bahasa-korea.jpg" data-caption="Kursus Bahasa Korea Tingkat 1" tabindex="0" role="button" aria-label="Perbesar sertifikat Kursus Bahasa Korea Tingkat 1">
+          <div class="cert-thumb"><img src="sertifikat/bahasa-korea.jpg" alt="Sertifikat Kursus Bahasa Korea Tingkat 1" loading="lazy"></div>
+          <h3>Kursus Bahasa Korea Tingkat 1</h3>
+          <p>SMK Krian 1 bersama KOICA · predikat Baik</p>
+          <span class="cert-date">9 Juni 2025</span>
+          <div class="cert-links"><a href="sertifikat/sertifikat-smk-krian-1.pdf" target="_blank" rel="noopener">Buka PDF</a></div>
+        </article>
+        <article class="cert-card" data-zoom="sertifikat/kunjungan-industri.jpg" data-caption="Kunjungan Industri" tabindex="0" role="button" aria-label="Perbesar sertifikat Kunjungan Industri">
+          <div class="cert-thumb"><img src="sertifikat/kunjungan-industri.jpg" alt="Sertifikat Kunjungan Industri" loading="lazy"></div>
+          <h3>Kunjungan Industri</h3>
+          <p>PT Tirta Fresindo Jaya dan Universitas Dinamika</p>
+          <span class="cert-date">16 Januari 2025</span>
+          <div class="cert-links"><a href="sertifikat/sertifikat-smk-krian-1.pdf" target="_blank" rel="noopener">Buka PDF</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CV ================= -->
+  <section class="section" id="cv">
+    <div class="section-inner">
+      <p class="section-label">07.CV</p>
+      <h2 class="section-title">Curriculum Vitae</h2>
+      <div class="cv-grid">
+        <div class="cv-preview" data-zoom="cv/cv-preview.jpg" data-caption="CV Muhammad Rasyid Anfyardhana" tabindex="0" role="button" aria-label="Perbesar CV">
+          <img src="cv/cv-preview.jpg" alt="Pratinjau CV Muhammad Rasyid Anfyardhana" loading="lazy">
+        </div>
+        <div class="cv-info">
+          <h3>Muhammad Rasyid Anfyardhana</h3>
+          <p>Siswa Teknik Rekayasa Perangkat Lunak SMK Krian 1 Sidoarjo dengan dasar pemrograman web, basis data, dan pengolahan data. Berpengalaman PKL di PT Karya Usaha Baru (Januari–Mei 2026).</p>
+          <ul class="hp-points">
+            <li>Logika dan pemodelan sistem: flowchart dan activity diagram</li>
+            <li>Basis data: perancangan tabel dan SQL (CRUD)</li>
+            <li>Pengolahan data dan dokumen dengan Microsoft Word dan Excel</li>
+            <li>Kerja sama tim, disiplin, dan teliti</li>
+          </ul>
+          <div class="hp-actions">
+            <a class="btn btn-primary" href="cv/CV-Muhammad-Rasyid-Anfyardhana.pdf" download>Unduh CV (PDF)</a>
+            <a class="btn btn-ghost" href="cv/CV-Muhammad-Rasyid-Anfyardhana.pdf" target="_blank" rel="noopener">Lihat di tab baru</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KONTAK ================= -->
+  <section class="section section-alt" id="kontak">
+    <div class="section-inner">
+      <p class="section-label">08.Kontak</p>
+      <h2 class="section-title">Kontak</h2>
+      <p class="section-sub">Ada peluang magang, kerja sama, atau sekadar ingin ngobrol soal project? Kirim pesan lewat form di bawah.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a class="contact-link" href="mailto:anfyardhana2008@gmail.com">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">Email</span>
+              <span>anfyardhana2008@gmail.com</span>
+            </span>
+          </a>
+          <a class="contact-link" href="https://wa.me/6289675891481" target="_blank" rel="noopener">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.36 7.55L3 20l1.05-5.5A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">WhatsApp</span>
+              <span>+62 896-7589-1481</span>
+            </span>
+          </a>
+          <a class="contact-link" href="https://github.com/ardhan-afy" target="_blank" rel="noopener">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">GitHub</span>
+              <span>github.com/ardhan-afy</span>
+            </span>
+          </a>
+          <a class="contact-link" href="https://www.instagram.com/ardhan.afy/" target="_blank" rel="noopener">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">Instagram</span>
+              <span>instagram.com/ardhan.afy/</span>
+            </span>
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="name" placeholder="Nama lengkap kamu" required>
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@contoh.com" required>
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tulis pesanmu di sini..." required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
+          <p class="form-success" id="formSuccess" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Dibuat dengan Visual Studio Code <span aria-hidden="true"></span> oleh Muhammad Rasyid Anfyardhana <span id="year"></span></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="script.js"></script>
+<script src="3d.js"></script>
+<script src="landscape.js"></script>
+<script src="health.js"></script>
+<script src="docs.js"></script>
+<script src="musik.js"></script>
+<audio id="bgm" src="audio/musik.mp3" autoplay loop preload="auto"></audio>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau dokumen">
+  <button type="button" class="lb-close" id="lbClose" aria-label="Tutup">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f2f2f7">
+    <title>Catatan</title>
+
+    <link rel="icon" type="image/png" href="icon.jpg">
+    <link rel="apple-touch-icon" href="icon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="ios-app" id="app">
+        <!-- Header Utama iOS -->
+        <header class="ios-header">
+            <div class="header-top">
+                <span class="back-btn"><i data-lucide="chevron-left"></i> Folders</span>
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleDarkMode()" title="Ubah Tema">
+                        <i data-lucide="moon" id="themeIcon"></i>
+                    </button>
+                </div>
+            </div>
+            <h1 class="header-title">Catatan</h1>
+            <!-- Search Bar iOS -->
+            <div class="search-bar">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Cari judul, isi, atau kategori..." oninput="cariCatatan()">
+            </div>
+        </header>
+
+        <!-- Form Modal Sheet untuk Tambah / Edit Catatan -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="ios-modal">
+                <div class="modal-header">
+                    <button class="btn-cancel" onclick="tutupModal()">Batal</button>
+                    <span class="modal-title" id="modalTitleText">Catatan Baru</span>
+                    <button class="btn-done" onclick="simpanCatatan()">Selesai</button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="editId">
+                    
+                    <!-- Pilihan Kategori -->
+                    <div class="category-select-wrapper">
+                        <label for="kategori">Kategori:</label>
+                        <select id="kategori" class="category-select">
+                            <option value="Umum">⚪ Umum</option>
+                            <option value="Pribadi">🔵 Pribadi</option>
+                            <option value="Penting">🔴 Penting</option>
+                            <option value="Resep / Tugas">🟢 Resep / Tugas</option>
+                        </select>
+                    </div>
+
+                    <input type="text" id="judul" placeholder="Judul" class="input-title">
+                    <textarea id="isi" placeholder="Mulai mengetik..." class="input-content"></textarea>
+                    
+                    <button id="btnHapusModal" class="btn-delete" onclick="hapusCatatanModal()" style="display: none;">Hapus Catatan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daftar Catatan -->
+        <main class="ios-content">
+            <div class="notes-card-container" id="daftarCatatan"></div>
+        </main>
+
+        <!-- Bottom Toolbar iOS -->
+        <footer class="ios-toolbar">
+            <div class="count-text" id="noteCount">0 Catatan</div>
+            <button class="fab-add" onclick="bukaModalBaru()">
+                <i data-lucide="square-pen"></i>
+            </button>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* ===== LANDSCAPE: tambahan 3D di atas style.css ===== */
+.avatar3d{ width: 190px; aspect-ratio: 1 / 1.15; margin: 0 0 28px; perspective: 800px; }
+.av-card{ position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+.av-l{ position: absolute; inset: 0; border-radius: 22px; border: 2px solid var(--accent); }
+.l1{ transform: translateZ(-44px); opacity: .3; } .l2{ transform: translateZ(-22px); opacity: .6; }
+.av-card img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 22px; box-shadow: 0 30px 50px -20px rgba(0,0,0,.7); }
+.av-badge{ position: absolute; right: -16px; bottom: 20px; transform: translateZ(70px); font-family: var(--font-mono); font-size: .78rem; background: var(--code-bg); color: var(--code-green); border: 1px solid var(--border); padding: 6px 12px; border-radius: 999px; }
+.drum{ transition: opacity .6s ease !important; will-change: transform; }
+
+@supports (animation-timeline: view()){
+  .skill-card, .cert-card, .project-card, .contact-info, .contact-form{ animation: cardIn linear backwards; animation-timeline: view(); animation-range: entry 0% entry 90%; }
+}
+@keyframes cardIn{ from{ opacity: .2; transform: perspective(900px) rotateX(35deg) translateY(60px) translateZ(-120px); } }
+
+/* Pendidikan + peta 3D */
+.map-sub{ margin: 36px 0 14px; max-width: none; }
+#map{ height: 540px; }
+.place-link{ cursor: pointer; }
+.place-link .timeline-content::after{ content: ""; display: inline-block; margin-top: 10px; font-family: var(--font-mono); font-size: .78rem; color: var(--accent-ink); }
+.place-link:hover h3, .place-link.active h3{ color: var(--accent-ink); }
+.place-link.active .timeline-dot{ background: #7CFFB2; box-shadow: 0 0 0 2px #7CFFB2; }
+.map-panel{ display: block; max-width: 300px; background: rgba(7,27,66,.92); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+.map-panel small{ display: block; color: var(--muted); font-size: .75rem; margin: 2px 0 6px; }
+.map-panel a{ font-family: var(--font-mono); font-size: .76rem; color: var(--accent-ink); }
+@media (max-width: 680px){ #map{ height: 440px; } .map-panel{ right: 56px; max-width: none; } }
+
+/* Seluruh kartu project bisa diklik (menuju aplikasinya) */
+.project-card{ position: relative; cursor: pointer; }
+.project-links a.card-link{ position: static; }
+.project-links a.card-link::after{ content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.project-links a:not(.card-link){ position: relative; z-index: 2; }
+.project-card:has(.card-link:focus-visible){ outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-thumb{ background-color: #0d2757; }

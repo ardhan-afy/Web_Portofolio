@@ -1,0 +1,27 @@
+/* ===== LAPISAN 3D (tambahan di atas style.css) ===== */
+html{ background: var(--bg); }
+body{ background: transparent; }
+#bg3d{ position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.section-alt{ background: rgba(15,52,135,.72); backdrop-filter: blur(3px); }
+.hero-text, .terminal{ position: relative; z-index: 1; }
+.terminal{ transform: perspective(900px) rotateY(-9deg) rotateX(4deg); transition: transform .5s ease; }
+.terminal:hover{ transform: perspective(900px) rotateY(0) rotateX(0); }
+
+.tilt{ transform-style: preserve-3d; will-change: transform; transition: transform .15s ease-out, opacity .6s ease, background .25s ease, box-shadow .25s ease; }
+.tilt:hover{ box-shadow: 0 30px 50px -24px rgba(0,0,0,.6); }
+
+/* ===== PETA 3D ===== */
+.map-wrap{ position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
+#map{ width: 100%; height: 520px; background: var(--code-bg); }
+.map-panel{ position: absolute; left: 14px; top: 14px; z-index: 2; display: flex; flex-direction: column; gap: 8px; max-width: 260px; }
+.map-btn{ font-family: var(--font-mono); font-size: .8rem; text-align: left; color: var(--ink); background: rgba(7,27,66,.9); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; cursor: pointer; transition: border-color .2s, background .2s; }
+.map-btn:hover, .map-btn.active{ border-color: var(--accent); background: rgba(15,52,135,.95); }
+.map-btn small{ display: block; color: var(--muted); font-size: .72rem; margin-top: 2px; }
+.map-fallback{ position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; padding: 24px; background: var(--code-bg); z-index: 3; }
+.map-fallback.show{ display: flex; flex-direction: column; gap: 12px; }
+.maplibregl-popup-content{ background: #071B42; color: #F5F8FF; font-family: var(--font-body); border: 1px solid var(--border); border-radius: 10px; }
+.maplibregl-popup-content p{ margin: 4px 0 0; color: #B9CBF2; font-size: .85rem; }
+.maplibregl-popup-tip{ border-top-color: #071B42 !important; border-bottom-color: #071B42 !important; }
+.pin{ width: 22px; height: 22px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent); border: 3px solid #fff; box-shadow: 0 6px 12px rgba(0,0,0,.5); cursor: pointer; }
+.pin.home{ background: #7CFFB2; }
+@media (max-width: 680px){ #map{ height: 440px; } .map-panel{ right: 14px; max-width: none; flex-direction: row; flex-wrap: wrap; } }
