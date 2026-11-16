@@ -1,0 +1,85 @@
+/* ===== SERTIFIKAT & CV ===== */
+.cert-grid{ grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cert-card{ padding: 14px 14px 20px; display: flex; flex-direction: column; }
+.cert-card[data-zoom]{ cursor: zoom-in; }
+.cert-thumb{
+  aspect-ratio: 1.41 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.cert-thumb img{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.cert-card:hover .cert-thumb img{ transform: scale(1.05); }
+.cert-thumb.cert-text{
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--code-bg), #16305E);
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--code-green);
+  letter-spacing: .02em;
+}
+.cert-card h3{ padding: 0 6px; font-size: 1rem; }
+.cert-card p{ padding: 0 6px; margin-bottom: 4px; }
+.cert-date{ padding: 0 6px; font-family: var(--font-mono); font-size: .76rem; color: var(--accent-ink); }
+.cert-links{ padding: 10px 6px 0; display: flex; gap: 16px; font-family: var(--font-mono); font-size: .78rem; margin-top: auto; }
+.cert-links a{ color: var(--accent-ink); position: relative; z-index: 2; }
+.cert-links a:hover{ text-decoration: underline; }
+
+.cv-grid{ display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: center; }
+.cv-preview{
+  perspective: 1000px; cursor: zoom-in;
+}
+.cv-preview img{
+  width: 100%; display: block; border-radius: 8px;
+  box-shadow: 0 40px 70px -25px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.12);
+  transform: rotateY(14deg) rotateX(3deg);
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.cv-preview:hover img{ transform: rotateY(0) rotateX(0) scale(1.02); }
+.cv-info h3{ font-size: 1.6rem; margin-bottom: 12px; color: var(--ink); }
+.cv-info > p{ max-width: 56ch; }
+.cv-info .hp-points{ margin: 6px 0 22px; }
+
+/* Lightbox */
+.lightbox{
+  position: fixed; inset: 0; z-index: 300;
+  display: grid; place-items: center;
+  background: rgba(3,12,32,.88);
+  backdrop-filter: blur(6px);
+  padding: 24px;
+}
+.lightbox[hidden]{ display: none; }
+.lightbox figure{ margin: 0; max-width: min(1100px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.lightbox img{ max-width: 100%; max-height: calc(100vh - 110px); border-radius: 8px; box-shadow: 0 30px 80px rgba(0,0,0,.6); background: #fff; }
+.lightbox figcaption{ font-family: var(--font-mono); font-size: .85rem; color: var(--muted); text-align: center; }
+.lb-close{
+  position: absolute; top: 18px; right: 18px;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: rgba(7,27,66,.9); color: var(--ink); cursor: pointer;
+  display: grid; place-items: center;
+}
+.lb-close svg{ width: 20px; height: 20px; }
+.lb-close:hover{ border-color: var(--accent); color: var(--accent-ink); }
+
+/* Panah carousel pakai ikon SVG */
+.hp-arrow{ display: grid; place-items: center; }
+.hp-arrow svg{ width: 18px; height: 18px; }
+
+@media (max-width: 900px){
+  .cert-grid{ grid-template-columns: 1fr 1fr; }
+  .cv-grid{ grid-template-columns: 1fr; gap: 32px; }
+  .cv-preview{ max-width: 300px; margin: 0 auto; }
+}
+@media (max-width: 680px){
+  .cert-grid{ grid-template-columns: 1fr; }
+}
+
+.cv-info{ --hp: #19b3a1; }
+.cv-grid{ margin-top: 48px; }
+.cv-preview img{ transform: rotateY(10deg) rotateX(2deg); }
+body{ overflow-x: clip; }
+
+/* Foto: potong dari atas supaya rambut tidak terpotong */
+.av-card img, .photo-frame-inner img{ object-position: 50% 0; }
