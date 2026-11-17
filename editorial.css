@@ -75,3 +75,34 @@
 @media (max-width:600px) {
   .hero-portrait { top:auto; bottom:115px; height:64%; max-width:96%; mask-image:linear-gradient(#000 90%,transparent); }
 }
+
+
+
+
+/* Education: original school marks, aligned with the editorial timeline. */
+#pendidikan .timeline { --edu-rail: 28px; padding-left: var(--edu-rail); margin-left: 5px; border-left: 1px solid var(--line); }
+#pendidikan .timeline-item { padding-bottom: 18px; }
+#pendidikan .timeline-item:last-child { padding-bottom: 0; }
+#pendidikan .timeline-dot { left: calc(-1 * var(--edu-rail) - 5px); top: 30px; }
+#pendidikan .timeline-content { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 23px; align-items: start; padding: 23px; border-radius: 12px; transition: border-color .22s ease, background-color .22s ease; }
+#pendidikan .timeline-content:hover { border-color: var(--outline); }
+#pendidikan .education-logo { width: 96px; aspect-ratio: 1; display: grid; place-items: center; padding: 0; border-radius: 0; background: transparent; border: 0; box-shadow: none; }
+#pendidikan .education-logo img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; display: block; filter: drop-shadow(0 8px 18px rgba(0,0,0,.10)); }
+#pendidikan .education-details { min-width: 0; }
+#pendidikan .timeline-date { display: block; color: var(--muted); }
+#pendidikan .timeline-content h3 { line-height: 1.35; margin: 6px 0 8px; }
+#pendidikan .timeline-content p { line-height: 1.65; margin: 0; }
+#pendidikan .timeline-content .arrow-link { display: inline-flex; margin-top: 12px; }
+@media (max-width: 600px) {
+ #pendidikan .timeline { --edu-rail: 17px; }
+ #pendidikan .timeline-content { grid-template-columns: 62px minmax(0,1fr); gap: 13px; padding: 14px; border-radius: 9px; }
+ #pendidikan .education-logo { width: 62px; padding: 0; border-radius: 0; }
+ #pendidikan .timeline-content h3 { font-size: 16px; }
+ #pendidikan .timeline-content p { font-size: 13px; }
+ #pendidikan .timeline-dot { top: 23px; }
+}
+@media (max-width: 360px) {
+ #pendidikan .timeline-content { grid-template-columns: 48px minmax(0,1fr); gap: 10px; padding: 11px; }
+ #pendidikan .education-logo { width: 48px; padding: 0; }
+}
+@media(prefers-reduced-motion:reduce) { #pendidikan .timeline-content { transition:none; } }

@@ -1,0 +1,78 @@
+/* Editorial identity card — isolated from the hero and the original site styles. */
+#tentang .about-grid{grid-template-columns:minmax(280px,340px) minmax(0,1fr);gap:clamp(28px,5vw,76px);align-items:center;margin-top:30px}
+.about-card-column{width:100%;min-width:0;max-width:340px;margin-inline:auto;text-align:center}
+.id-stage{--card-width:218px;--card-height:310px;position:relative;width:100%;height:474px;isolation:isolate;container-type:inline-size;perspective:1100px;overflow:clip;touch-action:pan-y;border:1px solid var(--line);border-radius:12px;background:radial-gradient(ellipse at 50% 60%,var(--surface2),var(--bg) 75%);}
+.id-stage:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;background:radial-gradient(var(--outline) .6px,transparent .6px) 0 0/18px 18px;mask-image:radial-gradient(ellipse at center,#000,transparent 80%)}
+.id-stage-label{position:absolute;top:14px;left:13px;letter-spacing:.12em;font:600 9px/1.5 ui-monospace,monospace;color:var(--muted);pointer-events:none}
+.id-anchor{position:absolute;z-index:1;top:0;left:50%;width:25px;height:10px;border:1px solid #696b70;border-radius:0 0 5px 5px;background:#303236;transform:translateX(-50%)}
+.id-lanyard{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+.id-strap-shadow{fill:none;stroke:#000;stroke-opacity:.28;stroke-width:24;stroke-linecap:round;transform:translate(2px,3px)}
+.id-strap{fill:none;stroke:url(#idRibbon);stroke-width:19;stroke-linecap:round}.id-seam{fill:none;stroke:#a2a3a5;stroke-width:.8;stroke-opacity:.65;stroke-dasharray:2 4}.id-strap-print{font:700 7.5px/1 Arial,sans-serif;letter-spacing:1px;fill:#f1f1ed;dominant-baseline:middle}
+.id-rig{position:absolute;z-index:2;top:0;left:0;width:var(--card-width);height:var(--card-height);transform-origin:50% 0;transform:translate3d(calc((100cqw - var(--card-width))/2),110px,0) rotate(-5deg);will-change:transform;}
+.id-swivel{position:absolute;left:calc(50% - 9px);width:18px;height:21px;top:-29px;z-index:2;border:1px solid #73777b;border-radius:4px;background:linear-gradient(95deg,#242629,#a7a9ac 20%,#5d6064 48%,#26282c 90%);box-shadow:0 2px 3px #0006}
+.id-ring{position:absolute;left:calc(50% - 10px);width:20px;height:22px;top:-14px;z-index:4;border:3px solid #a8aaad;border-top-color:#e5e5e5;border-right-color:#66686c;border-radius:50%;box-shadow:1px 1px 3px #0008;pointer-events:none}
+.id-flip-wrap{width:100%;height:100%;perspective:1000px;transform-style:preserve-3d}
+.id-card{appearance:none;border:0;padding:0;display:block;position:relative;width:100%;height:100%;background:none;color:#151719;text-align:left;transform-style:preserve-3d;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transition:transform .65s cubic-bezier(.22,.75,.23,1);transform:rotateY(var(--flip,0deg));}
+.id-card:active,.id-stage.is-dragging .id-card{cursor:grabbing}.id-card.is-back{--flip:180deg}.id-card:focus-visible{outline:2px solid var(--outline);outline-offset:7px;border-radius:11px}
+/* Printed monochrome badge, inspired by a vertical event pass. */
+.id-face{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid #45484b;border-radius:12px;background:#eff0ed;color:#1b1d20;transform:translateZ(4px);padding:0;line-height:1;box-shadow:0 14px 24px #0004}
+.id-slot{position:absolute;z-index:6;top:4px;left:50%;transform:translateX(-50%);width:29px;height:6px;border-radius:8px;background:#202225;border:1px solid #989b9b;box-shadow:inset 0 1px 2px #0008}
+.id-topline{display:flex;align-items:center;gap:7px;flex:0 0 52px;padding:16px 12px 7px;position:relative;z-index:3;background:#eff0ed}
+.id-monogram{display:grid;place-items:center;background:#202225;color:#f2f3f0;width:24px;height:24px;border-radius:4px;font:900 16px/1 Arial,sans-serif;flex-shrink:0}
+.id-brand{font:900 12px/1 Arial,sans-serif;letter-spacing:.07em;white-space:nowrap}.id-brand>span{display:block;font:600 6px/1.5 ui-monospace,monospace;letter-spacing:.07em;margin-top:2px}
+.id-edition{margin-left:auto;text-align:right;font:700 8px/1.15 ui-monospace,monospace;letter-spacing:.06em}
+.id-artwork{position:relative;flex:1;min-height:0;overflow:hidden;background:linear-gradient(125deg,#f0f1ef,#ced1d0);isolation:isolate}
+.id-seal{position:absolute;display:block;width:176px;height:176px;top:-22px;left:59px;color:#656d73;opacity:.22;transform:rotate(-18deg);z-index:0}.id-seal svg{width:100%;height:100%}
+.id-ghost-type{position:absolute;left:10px;top:12px;color:#9ea5a7;font:900 21px/.93 'Arial Narrow',Arial,sans-serif;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:-.04em;opacity:.7;white-space:nowrap}.id-ghost-type span{color:transparent;-webkit-text-stroke:1px #90979b}
+.id-vertical{position:absolute;inset:0 0 0 auto;width:29%;background:#353b40;color:#f3f4f1;display:flex;align-items:flex-start;gap:4px;padding:9px 6px 0;writing-mode:vertical-rl;z-index:1;overflow:hidden;isolation:isolate}
+.id-vertical:before{content:"";position:absolute;bottom:-26px;right:-45px;width:150px;height:150px;border:18px double #b5b8b918;border-radius:50%;z-index:-1}
+.id-vertical strong{font:900 23px/.94 'Arial Narrow',Arial,sans-serif;letter-spacing:-.065em}.id-vertical>span{font:600 8px/1.13 Arial,sans-serif;letter-spacing:.05em}.id-vertical small{font:700 7px/1 ui-monospace,monospace;letter-spacing:.07em;margin-top:auto;margin-bottom:11px}
+.id-portrait{position:absolute;left:-3%;bottom:-11%;width:88%;height:108%;object-fit:contain;object-position:center bottom;max-width:none;z-index:2;filter:drop-shadow(-3px 4px 3px #1b222632);pointer-events:none}
+.id-art-caption{position:absolute;bottom:5px;left:6px;color:#eef0ed;z-index:3;font:700 6px/1 ui-monospace,monospace;letter-spacing:.05em;text-shadow:0 1px 3px #111}
+.id-name-band{position:relative;z-index:3;flex:0 0 61px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:#353b40;color:#f3f4f1;border-top:5px double #eff0ed;padding:3px 5px 5px;text-align:center}.id-name-band strong{font:900 32px/.94 'Arial Narrow',Arial,sans-serif;letter-spacing:-.055em}.id-name-band>span{font:700 9px/1.2 Arial,sans-serif;letter-spacing:.13em}
+.id-microstrip{display:flex;justify-content:space-between;align-items:center;gap:3px;flex:0 0 16px;padding:0 7px;background:#d6d9d8;color:#33393c;font:700 5.8px/1 ui-monospace,monospace;white-space:nowrap;letter-spacing:.035em;border-top:1px solid #eff0ed}
+.id-glint{position:absolute;inset:0;z-index:5;pointer-events:none;border-radius:inherit;background:linear-gradient(128deg,transparent 19%,#fff3 35%,transparent 48%,transparent 72%,#fff2 85%,transparent);opacity:.45;mix-blend-mode:screen}
+.id-back{transform:rotateY(180deg) translateZ(4px);background:#eff0ed}
+.id-back-art{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;padding:5px 12px 9px;gap:8px;position:relative;background:radial-gradient(circle at 90% 10%,#cbd0d0 0,transparent 70%);overflow:hidden}
+.id-back-heading{font:900 20px/1 'Arial Narrow',Arial,sans-serif;letter-spacing:-.045em;text-align:center}.id-back-heading span{display:block;font:700 6.5px/1.4 ui-monospace,monospace;letter-spacing:.07em;margin-top:4px}
+.id-qr-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;min-height:0;width:min(100%,167px);background:#353b40;padding:6px 10px 7px;color:#f0f1ee;gap:5px;box-shadow:0 4px 9px #0002}
+.id-scan{background:#eff0ed;color:#353b40;padding:3px 9px 2px;border-radius:4px 4px 0 0;font:900 10px/1 Arial,sans-serif;letter-spacing:.09em}
+.id-qr{display:flex;justify-content:center;align-items:center;background:#fff;min-height:0;flex:1;width:100%;padding:3px}.id-qr img{width:100%;height:100%;min-height:0;object-fit:contain;image-rendering:pixelated}
+.id-back-handle{font:700 6.5px/1 ui-monospace,monospace;letter-spacing:.02em;white-space:nowrap}
+.id-connect-band strong{font-size:28px}
+.id-controls{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}.id-hint{color:var(--muted);font-size:10px;line-height:1.35;text-align:left}.id-flip-button{border:1px solid var(--line);border-radius:5px;background:var(--surface);font-weight:650;font-size:11px;padding:6px 9px;white-space:nowrap;}.id-flip-button:hover{border-color:var(--outline)}.id-github{font-size:11px;color:var(--muted);display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:3px}
+#tentang .about-text{max-width:none}#tentang .about-text p{line-height:1.75}
+/* Photo stays transparent and independently sized, including on short laptop screens. */
+@media(min-width:901px){.hero-portrait{top:auto!important;bottom:0!important;width:auto!important;height:calc(100% - 116px)!important;max-width:min(47vw,760px)!important;object-fit:contain!important;object-position:center bottom;mask-image:linear-gradient(#000 96%,transparent 100%)!important}.hero .hero-top{top:96px}}
+@media(min-width:901px) and (max-height:680px){.hero-portrait{height:calc(100% - 102px)!important}.hero .hero-top{top:88px}}
+@media(max-width:760px){#tentang .about-grid{grid-template-columns:1fr;gap:25px;align-items:start}.about-card-column{max-width:340px}#tentang .about-text{max-width:none}}
+
+@media(prefers-reduced-motion:reduce){.id-card{transition:none!important}}.motion-off .id-card{transition:none!important}
+
+
+/* Open lanyard — no visual container. The actual printed card retains its edge. */
+.id-stage{border:0;border-radius:0;background:transparent;overflow:visible;perspective:900px;perspective-origin:50% 42%;height:474px;isolation:auto}
+.id-stage:before{display:none;content:none}
+.id-stage-label{display:none}
+.id-anchor{width:22px;height:9px;border-radius:4px;top:0;box-shadow:0 2px 5px #0003}
+.id-lanyard{overflow:visible;filter:drop-shadow(2px 3px 2px #0002)}
+.id-rig{transform-style:preserve-3d;will-change:transform}
+.id-flip-wrap{perspective:none;transform-style:preserve-3d}
+.id-card{transform-style:preserve-3d}
+.id-card-depth{position:absolute;inset:1px;border-radius:12px;background:#34373a;transform:translateZ(0);box-shadow:0 0 0 1px #676a6e;pointer-events:none}
+.id-card-depth:before,.id-card-depth:after{content:"";position:absolute;top:10px;bottom:10px;width:8px;background:linear-gradient(90deg,#272a2d,#7b7e80 46%,#343638);border-radius:2px;backface-visibility:visible}
+.id-card-depth:before{left:-4px;transform:rotateY(90deg)}
+.id-card-depth:after{right:-4px;transform:rotateY(90deg)}
+.id-front{transform:translateZ(4px);box-shadow:0 1px 0 #77797a,0 14px 23px #0004}
+.id-back{transform:rotateY(180deg) translateZ(4px);box-shadow:0 1px 0 #77797a,0 14px 23px #0004}
+.id-glint{opacity:var(--card-glint,.45);background:linear-gradient(128deg,transparent 12%,#fff3 var(--shine-pos,35%),transparent 55%,transparent 76%,#fff2 90%,transparent)}
+.id-swivel,.id-ring{transform:translateZ(5px)}
+.id-controls{margin-top:2px}.id-github{margin-top:10px}
+@media(max-width:760px){.id-stage{overflow:hidden;overflow:clip;height:452px}.about-card-column{max-width:340px}}
+@media(max-width:360px){.id-stage{height:426px}}
+
+/* The card is taller, like the reference; leave enough travel room for the spring. */
+.id-stage{--card-width:230px;--card-height:355px;height:510px}
+.id-glint{opacity:calc(var(--card-glint,.45)*.45)}
+@media(max-width:760px){.id-stage{--card-width:220px;--card-height:342px;height:474px}}
+@media(max-width:360px){.id-stage{--card-width:195px;--card-height:316px;height:440px}.id-topline{padding-inline:9px;flex-basis:47px}.id-vertical strong{font-size:20px}.id-vertical>span{font-size:7px}.id-vertical{gap:3px;padding-inline:4px}.id-brand{font-size:11px}.id-name-band{flex-basis:56px}.id-name-band strong{font-size:28px}.id-back-heading{font-size:17px}.id-qr-panel{width:min(100%,145px)}.id-microstrip{font-size:5px}}

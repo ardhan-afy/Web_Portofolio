@@ -7,7 +7,7 @@
 <title>Ardhan — Rekayasa Perangkat Lunak</title>
 <meta content="Portfolio siswa Rekayasa Perangkat Lunak SMK Krian 1" name="description"/>
 <meta content="#111214" name="theme-color"/>
-<link href="editorial.css" rel="stylesheet"/><link href="motion.css" rel="stylesheet"/><script>try{document.documentElement.dataset.theme=localStorage.getItem("ardhan-theme")||"dark"}catch(e){}</script></head>
+<link href="editorial.css" rel="stylesheet"/><link href="motion.css" rel="stylesheet"/><link href="about-card.css" rel="stylesheet"/><script>try{document.documentElement.dataset.theme=localStorage.getItem("ardhan-theme")||"dark"}catch(e){}</script></head>
 <body>
 <a class="skip-link" href="#tentang">Lewati ke konten</a>
 <!-- ================= NAVBAR ================= -->
@@ -21,7 +21,7 @@
 </div>
 </header>
 <!-- ================= HERO ================= -->
-<section class="hero" id="home"><div class="hero-top"><span class="eyebrow"><i></i> Software development student</span><div class="hero-tools"><a class="hero-index" href="#project">Portfolio / 01</a><button aria-pressed="false" class="motion-toggle" hidden="" id="motionToggle" type="button"><span aria-hidden="true" class="motion-icon"></span><span class="motion-label">Pause motion</span></button></div></div><h1 class="hero-name"><span class="sr-only">Muhammad Rasyid Anfyardhana — </span>ARDHAN</h1><div aria-hidden="true" class="hero-ticker"><div class="hero-ticker-track"><span>ARDHAN   ARDHAN  </span><span>ARDHAN   ARDHAN  </span></div></div><img alt="Foto profil Ardhan" class="hero-portrait" fetchpriority="high" height="1367" src="hero-portrait.png" width="1024"/><div class="hero-bottom"><div><p class="eyebrow">Based in Sidoarjo, Indonesia</p><p class="hero-intro">Web Developer<br/>Always learning</p></div><div class="hero-right"><p>Siswa Rekayasa Perangkat Lunak<br/>SMK Krian 1</p><a class="arrow-link" href="#project">Explore my work <span aria-hidden="true">↘</span></a></div></div></section>
+<section class="hero" id="home"><div class="hero-top"><span class="eyebrow"><i></i> Software development student</span><div class="hero-tools"><a class="hero-index" href="#project">Portfolio / 01</a><button aria-pressed="false" class="motion-toggle" hidden="" id="motionToggle" type="button"><span aria-hidden="true" class="motion-icon"></span><span class="motion-label">Pause motion</span></button></div></div><h1 class="hero-name"><span class="sr-only">Muhammad Rasyid Anfyardhana — </span>ARDHAN</h1><div aria-hidden="true" class="hero-ticker"><div class="hero-ticker-track"><span>ARDHAN   ARDHAN  </span><span>ARDHAN   ARDHAN  </span></div></div><img alt="Foto profil Ardhan" class="hero-portrait" fetchpriority="high" height="1360" src="hero-portrait.png" width="1024"/><div class="hero-bottom"><div><p class="eyebrow">Based in Sidoarjo, Indonesia</p><p class="hero-intro">Web Developer<br/>Always learning</p></div><div class="hero-right"><p>Siswa Rekayasa Perangkat Lunak<br/>SMK Krian 1</p><a class="arrow-link" href="#project">Explore my work <span aria-hidden="true">↘</span></a></div></div></section>
 <main>
 <!-- ================= TENTANG SAYA ================= -->
 <!-- ================= PENDIDIKAN ================= -->
@@ -189,16 +189,46 @@
 <p class="section-label">03 / About me</p>
 <h2 class="section-title">Learning by building</h2>
 <div class="about-grid">
-<div class="about-photo">
-<div class="photo-frame">
-<span class="frame-corner corner-tl"></span>
-<span class="frame-corner corner-tr"></span>
-<span class="frame-corner corner-bl"></span>
-<span class="frame-corner corner-br"></span>
-<div class="photo-frame-inner">
-<img alt="Foto Ardhan" src="hero-portrait.png"/>
-</div>
-</div>
+<div class="about-card-column">
+  <div class="id-stage" id="idStage" aria-label="Kartu identitas interaktif Ardhan">
+    <span class="id-anchor" aria-hidden="true"></span>
+    <svg class="id-lanyard" aria-hidden="true" viewBox="0 0 340 474" preserveAspectRatio="none"><defs><linearGradient id="idRibbon" x1="0" x2="1"><stop stop-color="#242629"/><stop offset=".5" stop-color="#4a4c4f"/><stop offset="1" stop-color="#212326"/></linearGradient></defs><path class="id-strap-shadow" d="M170 -4 L170 84"/><path class="id-strap" d="M170 -4 L170 84"/><path class="id-seam" d="M170 -4 L170 84"/><text class="id-strap-print"><textPath href="#idStrapText" startOffset="10">ARDHAN / DEV  •  ARDHAN / DEV</textPath></text><path id="idStrapText" d="M170 -4 L170 84" fill="none" stroke="none"/></svg>
+    <div class="id-rig" id="idRig">
+      <span class="id-swivel" aria-hidden="true"></span><span class="id-ring" aria-hidden="true"></span>
+      <div class="id-flip-wrap" id="idFlipWrap">
+        <button class="id-card" type="button" id="idCard" aria-label="Kartu Ardhan. Klik untuk membalik, atau gunakan panah untuk menggerakkan.">
+          <span class="id-card-depth" aria-hidden="true"></span>
+          <span class="id-face id-front">
+            <span class="id-slot" aria-hidden="true"></span>
+            <span class="id-topline"><span class="id-monogram">A</span><span class="id-brand">ARDHAN<span>PERSONAL IDENTITY</span></span><span class="id-edition">DEV<br/>01</span></span>
+            <span class="id-artwork">
+              <span class="id-seal" aria-hidden="true"><svg viewBox="0 0 160 160" fill="none" stroke="currentColor"><circle cx="80" cy="80" r="76" stroke-width="1.5"/><circle cx="80" cy="80" r="69" stroke-width="3" stroke-dasharray="2 5"/><circle cx="80" cy="80" r="58"/><circle cx="80" cy="80" r="49"/><path d="M80 0v160M0 80h160M23 23l114 114M137 23L23 137" opacity=".5"/><path d="M80 39 109 56 109 104 80 121 51 104 51 56Z" stroke-width="2"/><path d="m73 67-13 13 13 13m14-26 13 13-13 13m-3-32-8 38" stroke-width="3"/></svg></span>
+              <span class="id-ghost-type" aria-hidden="true">ARDHAN<br/><span>ARDHAN</span></span>
+              <span class="id-vertical"><strong>DEVELOPER</strong><span>SOFTWARE<br/>ENGINEERING</span><small>RPL / 01</small></span>
+              <img class="id-portrait" src="about-card-photo.png" alt="" draggable="false"/>
+              <span class="id-art-caption" aria-hidden="true">DESIGN / CODE / BUILD</span>
+            </span>
+            <span class="id-name-band"><strong>ARDHAN</strong><span>WEB DEVELOPER</span></span>
+            <span class="id-microstrip"><span>SMK KRIAN 1</span><span>RPL</span><span>PORTFOLIO / 01</span></span>
+            <span class="id-glint" aria-hidden="true"></span>
+          </span>
+          <span class="id-face id-back">
+            <span class="id-slot" aria-hidden="true"></span>
+            <span class="id-topline"><span class="id-monogram">A</span><span class="id-brand">ARDHAN<span>PERSONAL IDENTITY</span></span><span class="id-edition">DEV<br/>01</span></span>
+            <span class="id-back-art">
+              <span class="id-back-heading">PORTFOLIO<span>SOFTWARE DEVELOPMENT</span></span>
+              <span class="id-qr-panel"><span class="id-scan">SCAN ME</span><span class="id-qr"><img src="about-card-qr.png" alt="QR menuju GitHub ardhan-afy" draggable="false"/></span><span class="id-back-handle">GITHUB / ARDHAN-AFY</span></span>
+            </span>
+            <span class="id-name-band id-connect-band"><strong>CONNECT</strong><span>FIND ME ON GITHUB</span></span>
+            <span class="id-microstrip"><span>DESIGN</span><span>CODE</span><span>BUILD</span></span>
+            <span class="id-glint" aria-hidden="true"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="id-controls"><span class="id-hint">Tarik dan lepaskan kartu</span><button type="button" id="idFlip" aria-pressed="false" class="id-flip-button">Balik kartu <span aria-hidden="true">↻</span></button></div>
+  <a class="id-github" href="https://github.com/ardhan-afy" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 </div>
 <div class="about-text">
 <p>Saya adalah siswa Rekayasa Perangkat Lunak di <strong>SMK Krian 1</strong> yang tertarik pada dunia pengembangan perangkat lunak, khususnya pembuatan aplikasi web. Saya suka belajar hal baru dengan cara langsung praktik membuat project kecil-kecilan</p>
@@ -228,26 +258,35 @@
 <div class="timeline-item" data-place="sekolah">
 <div class="timeline-dot"></div>
 <div class="timeline-content">
+<div class="education-logo"><img src="assets/education/smk-krian-1.png" alt="Logo SMK Krian 1" width="100" height="100" loading="lazy" decoding="async"/></div>
+<div class="education-details">
 <span class="timeline-date">2023 — Sekarang</span>
 <h3>SMK Krian 1 — Rekayasa Perangkat Lunak</h3>
 <p>Menempuh pendidikan kejuruan dengan fokus pada pengembangan perangkat lunak, meliputi pemrograman web, basis data, dan rekayasa perangkat lunak berbasis proyek</p>
-<a class="arrow-link" href="https://www.google.com/maps/search/?api=1&amp;query=SMK%20Krian%201%20Sidoarjo" rel="noopener" target="_blank">Lihat lokasi ↗</a></div>
+<a class="arrow-link" href="https://www.google.com/maps/search/?api=1&amp;query=SMK%20Krian%201%20Sidoarjo" rel="noopener" target="_blank">Lihat lokasi ↗</a>
+</div></div>
 </div>
 <div class="timeline-item" data-place="smp">
 <div class="timeline-dot"></div>
 <div class="timeline-content">
+<div class="education-logo"><img src="assets/education/smpn-1-balongbendo.png" alt="Logo SMPN 1 Balongbendo" width="100" height="100" loading="lazy" decoding="async"/></div>
+<div class="education-details">
 <span class="timeline-date">2020 — 2023</span>
 <h3>SMPN 1 Balongbendo</h3>
 <p>Lulus dengan nilai yang baik serta aktif mengembangkan minat pribadi di bidang komputer dan teknologi informasi secara mandiri</p>
-<a class="arrow-link" href="https://www.google.com/maps/search/?api=1&amp;query=SMPN%201%20Balongbendo" rel="noopener" target="_blank">Lihat lokasi ↗</a></div>
+<a class="arrow-link" href="https://www.google.com/maps/search/?api=1&amp;query=SMPN%201%20Balongbendo" rel="noopener" target="_blank">Lihat lokasi ↗</a>
+</div></div>
 </div>
 <div class="timeline-item" data-place="mi">
 <div class="timeline-dot"></div>
 <div class="timeline-content">
+<div class="education-logo"><img src="assets/education/mi-miftahul-ulum-kraton.png" alt="Logo MI Miftahul Ulum Kraton" width="100" height="100" loading="lazy" decoding="async"/></div>
+<div class="education-details">
 <span class="timeline-date">2014 — 2020</span>
 <h3>MI Miftahul Ulum Kraton</h3>
 <p>Menyelesaikan pendidikan dasar dengan baik sekaligus menjadi masa awal mulai tertarik dan mengenal dunia komputer secara mendasar</p>
-<a class="arrow-link" href="https://www.google.com/maps/search/?api=1&amp;query=MI%20Miftahul%20Ulum%20Kraton" rel="noopener" target="_blank">Lihat lokasi ↗</a></div>
+<a class="arrow-link" href="https://www.google.com/maps/search/?api=1&amp;query=MI%20Miftahul%20Ulum%20Kraton" rel="noopener" target="_blank">Lihat lokasi ↗</a>
+</div></div>
 </div>
 </div>
 </div>
@@ -408,5 +447,5 @@
 </button>
 <figure><img alt="" id="lbImg"/><figcaption id="lbCap"></figcaption></figure>
 </div>
-<script src="editorial.js"></script><script src="motion.js"></script></body>
+<script src="editorial.js"></script><script src="motion.js"></script><script src="about-card.js"></script></body>
 </html>
